@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>First Flask App Results</title>
+    <link rel="stylesheet" media="screen" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+</head>
+<body>
+    We predict that this wine is from class {{ predicted_class }}
+    <br>
+
+    <img src="{{ url_for('static', filename='upward_sloping_chart.png') }}" alt="">
+
+    <a href="/">Go back home</a>
+</body>
+</html>
