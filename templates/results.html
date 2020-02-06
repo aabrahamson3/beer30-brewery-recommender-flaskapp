@@ -5,10 +5,22 @@
     <link rel="stylesheet" media="screen" href="{{ url_for('static', filename='bootstrap.min.css') }}">
 </head>
 <body>
-    We predict that this wine is from class {{ predicted_class }}
+    Based upon your search, you should check out: <br><br>
+    
+    {{ test[0][0] }} <p> - The beer that it recommended: {{ test[0][1] }}</p>
+    
+    {{ test[1][0] }} <p> - The beer that it recommended: {{ test[1][1] }}</p>
+    
+    {{ test[2][0] }} <p> - The beer that it recommended: {{ test[2][1] }}</p>
+
+    
+    <br><br>
+    Also: {{ predicted_class }}
     <br>
 
-    <img src="{{ url_for('static', filename='upward_sloping_chart.png') }}" alt="">
+    <br>
+    switch: {{ switch }}
+    <!-- <img src="{{ url_for('static', filename='upward_sloping_chart.png') }}" alt=""> -->
 
     <a href="/">Go back home</a>
 </body>
