@@ -9,10 +9,11 @@
       <div class="container">
         <h1 class="display-3">Beer30</h1>
         <p>
-          A Traveller's Brewery Recommender
+          A Brewery Recommender for Travellers
         </p>
         <p>
           <form action="/get_results" method="post">
+            <br>
             <p>City</p>
             <input type="text" name="City" value="Seattle"><br>
             <br>
@@ -20,11 +21,11 @@
             <input type="text" name="State" value="WA">
             <br><br><br>
             <p>Would you like to search with a keyword or a specific beer?</p>
-            <input type="radio" name="input-type" value="Keyword" > Keyword<br>
-            <input type="radio" name="input-type" value="Specific-Beer" checked > Specific Beer<br>
+            <input type="radio" name="input-type" value="keyword" checked> Keyword<br>
+            <input type="radio" name="input-type" value="specific beer"  > Specific Beer<br>
             <br>
             <p>Keyword or Beer</p>
-            <input type="text" name="kw_or_beer" value="oily">
+            <input type="text" name="kw_or_beer" value="motoroil">
             <br><br><br>
             <input type="submit" class="btn btn-primary btn-lg" value="Recommend!">
           </form>
