@@ -1,0 +1,21 @@
+html, body {
+    height: 100%
+}
+
+.jumbotron {
+    background: transparent
+}
+
+.btn-lg {
+    color:rgb(242,142,28);
+    background-color:rgb(246,246,227); 
+    border-color:rgb(5, 158, 167)
+}
+
+body {
+    background-image: 
+        linear-gradient(to top,
+        rgba(242,142,28,0.90) 75%, rgba(246,246,227,1) 76%, rgba(246,246,227,1) 100%); 
+    left: -1001px;
+    top: -1202px;
+}
