@@ -4,6 +4,8 @@ def validate_input(data):
     
     EXPECTED_FEATURES = ("City", "State", "input-type", "kw_or_beer")
     
+    
+
     if not data:
         errors.append("Form data must not be empty")
     else:

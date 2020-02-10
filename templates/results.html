@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>First Flask App Results</title>
+    <title>Beer30</title>
     <link rel="stylesheet" media="screen" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" media="screen" href="/static/style.css">
 </head>
 <body>
-    Based upon your search, you should check out: <br><br>
-    
-    {{ test[0][0] }} <p> - The beer that it recommended: {{ test[0][1] }}</p>
-    
-    {{ test[1][0] }} <p> - The beer that it recommended: {{ test[1][1] }}</p>
-    
-    {{ test[2][0] }} <p> - The beer that it recommended: {{ test[2][1] }}</p>
+    <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-3">Beer30</h1>
+                <p>
+                A Brewery Recommender for Travellers
+                </p>
+                <br>
+                <br>
+                Based on your {{switch}} search, <b>{{search_term}}</b>, your top breweries are:
+                <br><br>
+                {% for n in test %}
+                <li><b>{{n[0]}}</b> - Because of this beer: {{n[1]}}. <a href="https://www.google.com/search?q={{n[1]}}+beer+advocate">Find it online here.</a></li>
+                {% endfor %}
 
+                {% if predicted_class|length == 0 %}
+                    <p>We found no results, please try again</p>
+                {% endif %}
+                <br><br><br><br><br>
+                <a href="/">Go back home</a>
+            </div>
+            
+    </div>
     
-    <br><br>
-    Also: {{ predicted_class }}
     <br>
 
-    <br>
-    switch: {{ switch }}
-    <!-- <img src="{{ url_for('static', filename='upward_sloping_chart.png') }}" alt=""> -->
+    
 
-    <a href="/">Go back home</a>
+    
 </body>
 </html>

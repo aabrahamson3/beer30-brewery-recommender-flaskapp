@@ -19,15 +19,17 @@ def get_results():
 
     test_value, errors = validate_input(data)
     switch = test_value[2]
+    
     if not errors:
-        if switch == 'Specific-Beer':
+        if switch == 'specific beer':
             predicted_class = beer2beer(test_value[1], test_value[0], test_value[3])
-        elif switch == 'Keyword':
+        elif switch == 'keyword':
             predicted_class = get_recs_from_wordvec(test_value[1], test_value[0], test_value[3])
         
+        if not predicted_class:
+            return 'Nothing was found - please go back and try again. Double check the search option you have selected. <br><br> <a href="/">Go back home</a>'
 
-
-        return render_template("results.html", predicted_class=predicted_class, test=[(predicted_class[i][0],predicted_class[i][2]) for i in predicted_class], switch=test_value[2])
+        return render_template("results.html", predicted_class=predicted_class, test=[(predicted_class[i][0],predicted_class[i][2]) for i in predicted_class], switch=test_value[2], search_term = test_value[3])
         
     else:
         return abort(400, errors)
