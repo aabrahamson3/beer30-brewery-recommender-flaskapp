@@ -8,9 +8,13 @@
     <div class="jumbotron">
       <div class="container">
         <h1 class="display-3">Beer30</h1>
+        
         <p>
           A Brewery Recommender for Travellers
         </p>
+        <br>
+        <a href="/static/about_instructions.html">Instructions and Information</a>      
+        <!-- <p class="align-right">test</p> -->
         <p>
           <form action="/get_results" method="post">
             <br>
@@ -20,14 +24,14 @@
             <p>State</p>
             <input type="text" name="State" value="WA">
             <br><br><br>
-            <p>Would you like to search with a keyword or a specific beer?</p>
-            <input type="radio" name="input-type" value="keyword" checked> Keyword<br>
+            <p>Would you like to search with a descriptive word or a specific beer?</p>
+            <input type="radio" name="input-type" value="keyword" checked> Descriptive Word<br>
             <input type="radio" name="input-type" value="specific beer"  > Specific Beer<br>
             <br>
             <p>Keyword or Beer</p>
-            <input type="text" name="kw_or_beer" value="motoroil">
+            <input type="text" name="kw_or_beer" value="">
             <br><br><br>
-            <input type="submit" class="btn btn-primary btn-lg" value="Recommend!">
+            <input type="submit" class="btn btn-primary btn-lg" value="Search!">
           </form>
         </p>
       </div>
