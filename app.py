@@ -13,11 +13,13 @@ def index():
 @app.route("/get_results", methods=["POST"])
 def get_results():
     """ Recommends breweries to visit """
+    print('hello')
     data = request.form
     # switch = request.form.getlist
     print(data)
 
     test_value, errors = validate_input(data)
+    print(test_value)
     switch = test_value[2]
     
     if not errors:
@@ -35,10 +37,10 @@ def get_results():
         return abort(400, errors)
 
 
-@app.route("/detailed_review", methods=["POST"])
-def detailed_review():
+@app.route("/about_instructions", methods=["POST"])
+def about_instructions():
     """ Let user recommend many beers for a SVD collaborative filter """
-    return render_template("detailed.html")
+    return render_template("about_instructions.html")
 
 if __name__ == "__main__":
     serve(app, host='0.0.0.0', port=5000)
