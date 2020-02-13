@@ -21,6 +21,8 @@ def beer2beer(state, city, kw_or_beer):
     lookup_dict = pickle.load(lookup_file)
     lookup_file.close()
     model = load_alt_model()
+    state = state.upper()
+    city = city.title()
     for i in lookup_dict:
         if lookup_dict[i]['name'] == kw_or_beer:
             recs = model.docvecs.most_similar(str(i), topn=10000)
@@ -31,6 +33,8 @@ def get_recs_from_wordvec(state, city, keyword, n_recs=3, topn=8000, stem=True):
     lookup_file = open("src/models/lookup_dict.pickle", "rb")
     lookup_dict = pickle.load(lookup_file)
     lookup_file.close()
+    state = state.upper()
+    city = city.title()
     if stem == True:
         ls = LancasterStemmer()
         model = load_alt_model()
