@@ -23,6 +23,7 @@ def beer2beer(state, city, kw_or_beer):
     model = load_alt_model()
     state = state.upper()
     city = city.title()
+    kw_or_beer = kw_or_beer.title()
     for i in lookup_dict:
         if lookup_dict[i]['name'] == kw_or_beer:
             recs = model.docvecs.most_similar(str(i), topn=10000)
